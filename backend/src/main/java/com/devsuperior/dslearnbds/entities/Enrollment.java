@@ -28,7 +28,7 @@ public class Enrollment {
 	private boolean available;
 	private boolean onlyUpdate;
 	
-	
+	//faz referencia/Link a classe Lesson
 	@ManyToMany(mappedBy = "enrollmentsDone")
 	private Set<Lesson> lessonsDone = new HashSet<>();
 
