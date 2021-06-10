@@ -70,7 +70,6 @@ public class Topic implements Serializable {
 		this.lesson = lesson;
 		this.author = author;
 		this.offer = offer;
-		this.likes = likes;
 	}
 
 	public Long getId() {
