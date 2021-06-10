@@ -21,7 +21,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_topic")
-public class Topic implements Serializable{
+public class Topic implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -46,26 +46,22 @@ public class Topic implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "reply_id")
 	private Reply answer;
-	
+
 	@OneToMany(mappedBy = "topic")
 	private List<Reply> replies = new ArrayList<>();
 
 	@ManyToMany
-	@JoinTable(
-			name = "tb_topic_likes", 
-			joinColumns = @JoinColumn(name = "topic_id"), 
-			inverseJoinColumns = @JoinColumn(name = "user_id"))
+	@JoinTable(name = "tb_topic_likes", joinColumns = @JoinColumn(name = "topic_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
 	private Set<User> likes = new HashSet<>();
 
 	public Topic() {
 	}
 
-	public Topic(Long id, String title, String body, Instant moment, Lesson lesson, User author, Offer offer,
-			Set<User> likes) {
+	public Topic(Long id, String title, String body, Instant moment, Lesson lesson, User author, Offer offer) {
 		super();
 		this.id = id;
 		this.title = title;

@@ -41,14 +41,13 @@ public class Reply implements Serializable{
 	public Reply() {
 	}
 
-	public Reply(Long id, String body, Instant moment, Topic topic, User author, Set<User> likes) {
+	public Reply(Long id, String body, Instant moment, Topic topic, User author) {
 		super();
 		this.id = id;
 		this.body = body;
 		this.moment = moment;
 		this.topic = topic;
 		this.author = author;
-		this.likes = likes;
 	}
 
 	public Long getId() {
